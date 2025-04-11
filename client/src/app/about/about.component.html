@@ -1,0 +1,173 @@
+<div class="my-3" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="20px">
+    <div fxLayoutAlign="center center">
+        <mat-card class="card" fxFlex="35" fxFlex.lt-lg="45" fxFlex.lt-md="60" fxFlex.lt-sm="90">
+            <div class="text-center">
+                <img src="./assets/images/my-profile.jpg" alt="Varun Kumar BR" class="rounded-circle profile">
+                <div class="mt-3">
+                    <h2 class="text-primary">Varun Kumar BR</h2>
+                    <mat-card-subtitle>Full Stack Developer</mat-card-subtitle>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="20px">
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <div fxLayoutAlign="center center">
+                            <mat-icon>email</mat-icon>&nbsp;Email
+                        </div>
+                        <div>
+                            <a href="mailto:varunbr6@gmail.com">varunbr6@gmail.com</a>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <div fxLayoutAlign="center center">
+                            <mat-icon>phone</mat-icon>&nbsp;Phone
+                        </div>
+                        <div>
+                            <a href="tel:+919844288854">+91 9844288854</a>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <div fxLayoutAlign="center center">
+                            <mat-icon>public</mat-icon>&nbsp;Website
+                        </div>
+                        <div>
+                            <a target="_blank" href="https://varunbr.github.io/">https://varunbr.github.io</a>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <div fxLayoutAlign="center center">
+                            <mat-icon svgIcon="github"></mat-icon>&nbsp;Sorce Code
+                        </div>
+                        <div>
+                            <a target="_blank" href="https://github.com/varunbr/ShoppingCart">ShoppingCart</a>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <div fxLayoutAlign="center center">
+                            <mat-icon svgIcon="linkedin"></mat-icon>&nbsp;LinkedIn
+                        </div>
+                        <div>
+                            <a target="_blank" href="https://www.linkedin.com/in/brvarun/">brvarun</a>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <div fxLayoutAlign="center center">
+                            <mat-icon>place</mat-icon>&nbsp;Location
+                        </div>
+                        <div>
+                            <a target="_blank" href="https://goo.gl/maps/iCqryrwtc4Uucij76">Bengaluru</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div fxLayoutAlign="center center">
+        <mat-card class="card" fxFlex="70" fxFlex.lt-md="80" fxFlex.lt-sm="95">
+            <mat-card-title fxLayoutAlign="center">App Features</mat-card-title>
+            <mat-card-content>
+                <h3 class="mt-4 text-center">ShoppingCart is an e-commerce web app where users can view, order any
+                    available product.</h3>
+                <mat-accordion>
+                    <mat-expansion-panel *ngFor="let content of contents; let i = index" [expanded]="step === i"
+                        (opened)="step = i" hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>{{i + 1}}. {{content.title}}</mat-panel-title>
+                            <mat-panel-description fxHide.lt-md="true">
+                                {{content.description}}
+                            </mat-panel-description>
+                            <mat-icon color="accent">{{content.icon}}</mat-icon>
+                        </mat-expansion-panel-header>
+                        <h3 fxHide.gt-sm="true">{{content.description}}</h3>
+                        <ul>
+                            <li *ngFor="let item of content.items">{{item}}</li>
+                        </ul>
+                        <mat-action-row>
+                            <button mat-button *ngIf="i !== 0" color="warn" (click)="step = step - 1">Previous</button>
+                            <button mat-button *ngIf="i !== contents.length - 1" color="accent"
+                                (click)="step = step + 1">Next</button>
+                            <button mat-button *ngIf="i === contents.length - 1" color="accent"
+                                (click)="step = step + 1">End</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxLayoutAlign="center center">
+        <mat-card class="card" fxFlex="70" fxFlex.lt-md="80" fxFlex.lt-sm="95">
+            <mat-card-title fxLayoutAlign="center">Technology</mat-card-title>
+            <mat-card-content>
+                <h2 class="mt-4">Built With</h2>
+                <div class="mb-3 text-center">
+                    <a matTooltip="ASP.NET Core - Backend" target="_blank"
+                        href="https://dotnet.microsoft.com/apps/aspnet/">
+                        <img src="./assets/images/dot-net-core.png" alt="ASP.NET" width="80" height="80">
+                    </a>
+                    <a matTooltip="Angular - Frontend" target="_blank" href="https://angular.io/">
+                        <img src="./assets/images/angular.png" alt="Angular" width="80" height="80">
+                    </a>
+                    <a matTooltip="Angular Material - UI Framework" target="_blank" href="https://material.angular.io/">
+                        <img src="./assets/images/angular-material.svg" alt="Angular Material" width="auto" height="80">
+                    </a>
+                </div>
+                <div fxLayout="column" fxLayoutGap="10px">
+                    <div fxLayout="row" style="font-size: large;">
+                        <div fxFlex="20">#</div>
+                        <div fxFlex="40">Framework</div>
+                        <div fxFlex="40">Version</div>
+                    </div>
+                    <div>
+                        <mat-divider></mat-divider>
+                        <mat-divider></mat-divider>
+                        <mat-divider></mat-divider>
+                        <mat-divider></mat-divider>
+                    </div>
+                    <div fxLayout="row">
+                        <div fxFlex="20">1.</div>
+                        <div fxFlex="40">ASP.NET Core</div>
+                        <div fxFlex="40">6.0</div>
+                    </div>
+                    <div>
+                        <mat-divider></mat-divider>
+                    </div>
+                    <div fxLayout="row">
+                        <div fxFlex="20">2.</div>
+                        <div fxFlex="40">Entity Framework</div>
+                        <div fxFlex="40">6.0</div>
+                    </div>
+                    <div>
+                        <mat-divider></mat-divider>
+                    </div>
+                    <div fxLayout="row">
+                        <div fxFlex="20">3.</div>
+                        <div fxFlex="40">Angular</div>
+                        <div fxFlex="40">13.1</div>
+                    </div>
+                    <div>
+                        <mat-divider></mat-divider>
+                    </div>
+                    <div fxLayout="row">
+                        <div fxFlex="20">4.</div>
+                        <div fxFlex="40">Angular Material</div>
+                        <div fxFlex="40">13.1</div>
+                    </div>
+                    <div>
+                        <mat-divider></mat-divider>
+                    </div>
+                </div>
+                <h2 class="mt-4">Acknowledgements</h2>
+                <div class="text-muted" fxLayout="column">
+                    <li><a class="text-muted" target="_blank" href="https://cloudinary.com">Cloudinary - Image
+                            Repository</a></li>
+                    <li><a class="text-muted" target="_blank" href="https://www.flipkart.com/">Flipkart - Data & Image
+                            Urls</a></li>
+                    <li><a class="text-muted" target="_blank" href="https://www.amazon.in/">Amazon - Data & Image
+                            Urls</a></li>
+                    <li><a class="text-muted" target="_blank" href="https://github.com/angular/flex-layout">Angular
+                            Flex-Layout</a></li>
+                    <li><a class="text-muted" target="_blank" href="https://github.com/AutoMapper/AutoMapper">AutoMapper
+                            - Dependency Injection</a></li>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

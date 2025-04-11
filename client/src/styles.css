@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+.profile {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+
+.profile-sm {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+}
+
+.hint-info {
+  font-size: 14px !important;
+}
+
+.error-snack-bar {
+  background-color: orangered !important;
+  color: whitesmoke !important;
+}
+
+.success-snack-bar {
+  background-color: green !important;
+  color: whitesmoke !important;
+}
+
+.warn-snack-bar {
+  background-color: darkgoldenrod !important;
+  color: whitesmoke !important;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+.success {
+  color: green;
+}
+.error {
+  color: orangered;
+}
+
+.cart-image-box {
+  height: 75px;
+  width: 75px;
+  background-color: white;
+  border-radius: 15px;
+}
+.cart-image {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+/* lt-xl */
+@media only screen and (max-width: 1919px) {
+  .title {
+    font-size: 18px !important;
+  }
+  .content {
+    font-size: 14px !important;
+  }
+  .image-box {
+    height: 170px;
+    width: 170px;
+    background-color: white;
+    border-radius: 15px;
+  }
+  .image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+}
+
+/* lt-lg */
+@media only screen and (max-width: 1279px) {
+  .title {
+    font-size: 16px !important;
+  }
+  .content {
+    font-size: 14px !important;
+  }
+  .image-box {
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    border-radius: 15px;
+  }
+  .image {
+    width: 135px;
+    height: 135px;
+    object-fit: contain;
+  }
+}
+
+/* lt-md */
+@media only screen and (max-width: 959px) {
+  .title {
+    font-size: 16px !important;
+  }
+  .content {
+    font-size: 14px !important;
+  }
+  .image-box {
+    height: 130px;
+    width: 130px;
+    background-color: white;
+    border-radius: 15px;
+  }
+  .image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+  }
+}
+
+/*  lt-sm */
+@media only screen and (max-width: 599px) {
+  .title {
+    font-size: 14px !important;
+  }
+  .content {
+    font-size: 12px !important;
+  }
+  .image-box {
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 15px;
+  }
+  .image {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+  }
+}

@@ -1,0 +1,40 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <button mat-flat-button color="accent" (click)="clear()">
+    <mat-icon>clear_all</mat-icon>
+    Clear
+  </button>
+  <button mat-flat-button color="accent" (click)="apply()">
+    <mat-icon>search</mat-icon>
+    Apply
+  </button>
+</div>
+<br>
+<div fxLayout="column">
+  <p class="title">Category</p>
+  <mat-form-field appearance="outline" fxFlex>
+    <mat-label>Select Category</mat-label>
+    <mat-select [(value)]="value['Category']">
+      <mat-option>Select Category</mat-option>
+      <mat-optgroup *ngFor="let group of categoryList" [label]="group.name">
+        <mat-option *ngFor="let item of group.children" [value]="item">
+          {{item}}
+        </mat-option>
+      </mat-optgroup>
+    </mat-select>
+  </mat-form-field>
+</div>
+<app-range-input *ngIf="price" [name]="price.name" [(value)]="value[price.name]" [range]="price.values | toIntArray"
+  [prefix]="price.unit">
+</app-range-input>
+<div *ngIf="brand" fxLayout="column">
+  <app-multi-select [name]="brand.name" [values]="brand.values" [(value)]="value[brand.name]">
+  </app-multi-select>
+</div>
+<div *ngFor="let item of _context?.properties">
+  <app-range-input *ngIf="item.type === 'Integer' && item.filter" [name]="item.name" [range]="item.values | toIntArray"
+    [(value)]="value[item.name]" [postfix]="item.unit">
+  </app-range-input>
+  <app-multi-select *ngIf="item.type !== 'Integer' && item.filter" [name]="item.name" [values]="item.values"
+    [(value)]="value[item.name]">
+  </app-multi-select>
+</div>

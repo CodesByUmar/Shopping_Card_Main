@@ -1,0 +1,10 @@
+<div fxLayout="column">
+    <p class="title">{{name}}</p>
+    <mat-form-field appearance="outline" fxFlex>
+        <mat-label>Select {{name}}</mat-label>
+        <mat-select [(value)]="value" (selectionChange)="onChange()">
+            <mat-option *ngFor="let item of values" [value]="item.value">{{item.name | spaceBetween}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

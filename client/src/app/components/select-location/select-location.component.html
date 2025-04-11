@@ -1,0 +1,26 @@
+<div fxLayout="column">
+    <p class="title">Locations</p>
+    <mat-form-field fxFlex appearance="outline">
+        <mat-label>Type</mat-label>
+        <mat-select [(ngModel)]="locationType" name="locationType">
+            <mat-option value="Area">Area</mat-option>
+            <mat-option value="City">City</mat-option>
+            <mat-option value="State">State</mat-option>
+            <mat-option value="Country">Country</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field fxFlex appearance="outline">
+        <mat-label>Locations</mat-label>
+        <mat-chip-list #chipList>
+            <mat-chip *ngFor="let location of locations; let i = index" (removed)="removeLocation(i)">
+                {{location.name}} ({{location.type}})
+                <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </mat-chip>
+        </mat-chip-list>
+        <input [placeholder]="'Add Locations...'" [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="true"
+            (matChipInputTokenEnd)="addLocation($event)" autocomplete="off">
+    </mat-form-field>
+</div>
